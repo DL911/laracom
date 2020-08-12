@@ -10,7 +10,7 @@ WORKDIR /app/laracom-demo-cli
 
 COPY . .
 
-RUN go env -w GOPROXY=https://goproxy.io,direct && go mod tidy
+RUN go env -w GOPROXY=https://goproxy.cn,direct && go mod tidy
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o laracom-demo-cli
 
