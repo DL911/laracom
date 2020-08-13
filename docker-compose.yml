@@ -30,7 +30,7 @@ services:
       DB_PASSWORD: "test"
 
   laracom-micro-api:
-    image: micro/micro:latest
+    image: microhq/micro:latest
     environment:
       MICRO_REGISTRY: "mdns"
     links:
