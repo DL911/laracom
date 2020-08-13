@@ -71,7 +71,7 @@ func (srv *UserService) ValidateToken(ctx context.Context, req *pb.Token, res *p
 		return err
 	}
 
-	if claims.User.Id == "" {
+	if claims.User.Email == "" {
 		return errors.New("无效的用户")
 	}
 
