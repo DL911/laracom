@@ -1,7 +1,8 @@
 syntax = "proto3";
 option go_package="./proto/user";
 
-package user;
+//package user;
+package laracom.service.user;
 
 service UserService {
   rpc Create(User) returns (Response) {}
