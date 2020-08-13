@@ -23,15 +23,6 @@ func (repo *UserRepository) Create(user *pb.User) error {
 	return nil
 }
 
-func (repo *UserRepository) Get(id string) (*pb.User, error) {
-	var user *pb.User
-	user.Id = id
-	if err := repo.Db.First(&user).Error; err != nil {
-		return nil, err
-	}
-	return user, nil
-}
-
 func (repo *UserRepository) GetByEmail(email string) (*pb.User, error) {
 	user := &pb.User{}
 	if err := repo.Db.Where("email = ?", email).First(&user).Error; err != nil {

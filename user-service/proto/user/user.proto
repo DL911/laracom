@@ -2,18 +2,16 @@ syntax = "proto3";
 option go_package="./proto/user";
 
 //package user;
-package laracom_service_user;
+package laracom.service.user;
 
 service UserService {
   rpc Create(User) returns (Response) {}
-  rpc Get(User) returns (Response) {}
   rpc GetAll(Request) returns (Response) {}
   rpc Auth(User) returns (Token) {}
   rpc ValidateToken(Token) returns (Token) {}
 }
 
 message User {
-  string id = 1;
   string name = 2;
   string email = 3;
   string password = 4;
