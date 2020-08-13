@@ -3,7 +3,7 @@
 
 //package user;
 
-package laracom_proto_user
+package user
 
 import (
 	fmt "fmt"
@@ -53,7 +53,7 @@ func NewUserService(name string, c client.Client) UserService {
 		c = client.NewClient()
 	}
 	if len(name) == 0 {
-		name = "laracom.service.user"
+		name = "laracom_service_user"
 	}
 	return &userService{
 		c:    c,
