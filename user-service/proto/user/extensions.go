@@ -1,5 +1,5 @@
 //package user
-package laracom_proto_user
+package laracom_service_user
 
 import (
 	"github.com/jinzhu/gorm"

@@ -37,7 +37,7 @@ services:
       - laracom-user-service
     ports:
       - 8080:8080
-    command: api --handler=rpc --namespace=laracom.service
+    command: api --handler=rpc --namespace=laracom_service
 
   laracom-user-db:
     image: mysql:5.7
