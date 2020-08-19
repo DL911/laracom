@@ -5,6 +5,7 @@ import (
 	pb "github.com/dl911/laracom/user-service/proto/user"
 	"github.com/dl911/laracom/user-service/repo"
 	"github.com/dl911/laracom/user-service/service"
+	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/net/context"
 	"log"
@@ -16,8 +17,14 @@ type UserService struct {
 }
 
 func (srv *UserService) Get(ctx context.Context, req *pb.User, res *pb.Response) error {
-	user, err := srv.Repo.Get(req.Id)
-	if err != nil {
+	var user *pb.User
+	var err error
+	if req.Id != "" {
+		user, err = srv.Repo.Get(req.Id)
+	} else if req.Email != "" {
+		user, err = srv.Repo.GetByEmail(req.Email)
+	}
+	if err != nil && err != gorm.ErrRecordNotFound {
 		return err
 	}
 	res.User = user
