@@ -29,6 +29,17 @@ services:
       DB_USER: "test"
       DB_PASSWORD: "test"
 
+  laracom-etcd:
+    image: bitnami/etcd:latest
+    environment:
+      ALLOW_NONE_AUTHENTICATION: "yes"
+      ETCD_ADVERTISE_CLIENT_URLS: "http://laracom-etcd:2379"
+    ports:
+      - 2379:2379
+      - 2380:2380
+    networks:
+      - microservice
+
   laracom-micro-api:
     image: microhq/micro:latest
     environment:
