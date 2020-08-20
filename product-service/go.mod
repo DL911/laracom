@@ -10,5 +10,5 @@ require (
 	github.com/micro/go-micro v1.18.0
 	github.com/micro/go-plugins/wrapper/monitoring/prometheus v0.0.0-20200119172437-4fe21aa238fd
 	github.com/prometheus/client_golang v1.7.1
-	google.golang.org/protobuf v1.23.0
+	google.golang.org/protobuf v1.25.0
 )
